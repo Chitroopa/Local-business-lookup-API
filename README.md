@@ -40,16 +40,16 @@ Sample JSON output
 ### REST routes
 
 
-| Request| Path | Params | comments|
-|--------|------|--------|---------|
-| GET | http://localhost:3000//api/v1/local_business |  NA |returns all local business information |
-| GET | http://localhost:3000//api/v1/local_business/{local_business ID} |  local business id |returns local business information by ID |
-| GET | http://localhost:3000//api/v1/local_business?city={city} |  city = town |returns local business with search city name |
-| GET | http://localhost:3000//api/v1/local_business?name={business name} |  name = Zboncak |returns local business with search business name |
-| GET | http://localhost:3000//api/v1/local_business?city={city} |  city = town |returns local business with search city name |
-| GET | http://localhost:3000//api/v1/local_business?stateAbbr={state} |  stateAbbr = wa |returns local business with search state name |
-| GET | http://localhost:3000//api/v1/local_business?country={country} |  country = US |returns local business with search country name |
-| GET | http://localhost:3000//api/v1/local_business?zip={zipcode} |  zip = 29688 |returns local business with search zipcode |
+| Request| Path | Params |          comments                |
+|--------|------|--------|----------------------------------|
+| GET | http://localhost:3000//api/v1/local_business |  NA | returns all local business information |
+| GET | http://localhost:3000//api/v1/local_business/{local_business ID} |   local business id | returns local business information by ID |
+| GET | http://localhost:3000//api/v1/local_business?city={city} |  city = town | returns local business with search city name |
+| GET | http://localhost:3000//api/v1/local_business?name={business name} |  name = Zboncak | returns local business with search business name |
+| GET | http://localhost:3000//api/v1/local_business?city={city} |  city = town | returns local business with search city name |
+| GET | http://localhost:3000//api/v1/local_business?stateAbbr={state} |  stateAbbr = wa | returns local business with search state name |
+| GET | http://localhost:3000//api/v1/local_business?country={country} |  country = US | returns local business with search country name |
+| GET | http://localhost:3000//api/v1/local_business?zip={zipcode} |  zip = 29688 | returns local business with search zipcode |
 | POST | http://localhost:3000/api/v1/local_business | name,street,city,state,country,zipcode,phone_number | create a new local business |
 | PATCH | http://localhost:3000/api/v1/local_business{local_business ID}| name,street,city,state,country,zipcode,phone_number,business_type, current_status, key_peoples, founded, founder, line_of_business, number_of_employees, website | update local business information|
 | DELETE | http://localhost:3000/api/v1/local_business{local_business ID} | delete local business by ID |
