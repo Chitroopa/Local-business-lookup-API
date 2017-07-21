@@ -1,0 +1,2 @@
+class LocalBusiness < ApplicationRecord
+end

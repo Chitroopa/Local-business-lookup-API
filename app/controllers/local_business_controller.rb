@@ -1,8 +1,8 @@
 class LocalBusinessController < ApplicationController
 
   def index
-    @business = {"name": "Google"}
-    json_response(@business)
+    @local_business = LocalBusiness.all
+    json_response(@local_business)
   end
 
   private
