@@ -5,6 +5,14 @@ class LocalBusinessController < ApplicationController
       @local_business = LocalBusiness.get_random
     elsif params[:name]
       @local_business = LocalBusiness.search_by_business_name(params[:name])
+    elsif params[:zip]
+      @local_business = LocalBusiness.search_by_zipcode(params[:zip])
+    elsif params[:city]
+      @local_business = LocalBusiness.search_by_city(params[:city])
+    elsif params[:stateAbbr]
+      @local_business = LocalBusiness.search_by_state(params[:stateAbbr])
+    elsif params[:country]
+      @local_business = LocalBusiness.search_by_country(params[:country])
     else
       @local_business = LocalBusiness.all
     end
