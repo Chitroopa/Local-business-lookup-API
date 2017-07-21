@@ -1,8 +1,10 @@
 class LocalBusinessController < ApplicationController
 
   def index
-    if params[:get_random] === 'yes'
+    if params[:random] === 'yes'
       @local_business = LocalBusiness.get_random
+    elsif params[:name]
+      @local_business = LocalBusiness.search_by_business_name(params[:name])
     else
       @local_business = LocalBusiness.all
     end
