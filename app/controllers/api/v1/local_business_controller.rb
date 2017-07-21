@@ -28,7 +28,6 @@ module Api::V1
     def create
       @local_business = LocalBusiness.create!(local_business_params)
       json_response(@local_business)
-
     end
 
     def update
