@@ -15,7 +15,7 @@ module Api::V1
       elsif params[:country]
         @local_business = LocalBusiness.search_by_country(params[:country])
       else
-        @local_business = LocalBusiness.all
+        @local_business = LocalBusiness.all.paginate(:page => params[:page], :per_page => 10)
       end
       json_response(@local_business)
     end
