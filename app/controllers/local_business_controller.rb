@@ -1,7 +1,11 @@
 class LocalBusinessController < ApplicationController
 
   def index
-    @local_business = LocalBusiness.all
+    if params[:get_random] === 'yes'
+      @local_business = LocalBusiness.get_random
+    else
+      @local_business = LocalBusiness.all
+    end
     json_response(@local_business)
   end
 
