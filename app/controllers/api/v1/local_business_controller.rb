@@ -3,19 +3,19 @@ module Api::V1
 
     def index
       if params[:random] === 'yes'
-        @local_business = LocalBusiness.get_random
+        @local_business = LocalBusiness.get_random.as_json(root: true)
       elsif params[:name]
-        @local_business = LocalBusiness.search_by_business_name(params[:name])
+        @local_business = LocalBusiness.search_by_business_name(params[:name]).as_json(root: true)
       elsif params[:zip]
-        @local_business = LocalBusiness.search_by_zipcode(params[:zip])
+        @local_business = LocalBusiness.search_by_zipcode(params[:zip]).as_json(root: true)
       elsif params[:city]
-        @local_business = LocalBusiness.search_by_city(params[:city])
+        @local_business = LocalBusiness.search_by_city(params[:city]).as_json(root: true)
       elsif params[:stateAbbr]
-        @local_business = LocalBusiness.search_by_state(params[:stateAbbr])
+        @local_business = LocalBusiness.search_by_state(params[:stateAbbr]).as_json(root: true)
       elsif params[:country]
-        @local_business = LocalBusiness.search_by_country(params[:country])
+        @local_business = LocalBusiness.search_by_country(params[:country]).as_json(root: true)
       else
-        @local_business = LocalBusiness.all.paginate(:page => params[:page], :per_page => 10)
+        @local_business = LocalBusiness.all.paginate(:page => params[:page], :per_page => 10).as_json(root: true)
       end
       json_response(@local_business)
     end
